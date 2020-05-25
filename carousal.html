@@ -1,0 +1,172 @@
+<html>
+<head>
+    <style>
+
+        body{
+            /* overflow: hidden; */
+            background-image: linear-gradient(orange,powderblue,gray,black);
+            /* padding-top:10px; */
+            box-sizing: border-box;
+            display:flex;
+            
+        }
+        div {
+            
+            border-radius: 10px;
+            margin:auto;        
+            height: 730px;
+            width: 1200px;
+            background-image: url("https://wallpapercave.com/wp/ld5pITO.jpg");
+        }
+        
+        .first {
+            background-image: url("https://wallpapercave.com/wp/ld5pITO.jpg");
+        }
+        
+        .second {
+            background-image: url("https://wallpapercave.com/wp/eKRGq2o.jpg");
+        }
+        
+        .third {
+            background-image: url("https://wallpapercave.com/wp/Cb6H16j.jpg");
+        }
+        
+        .four {
+            background-image: url("https://wallpapercave.com/wp/9cg6eKW.jpg");
+        }
+
+        #sam {
+            position: relative;
+            float: right;
+            top: calc(50% - 20px);
+            border:none;
+            outline:none;
+            padding:15px 10px;
+            background-color: rgba(46, 33, 233, 0.7);
+        }
+       
+        #sam2 {
+            position: relative;
+            top: calc(50% - 20px);
+            padding:15px 10px;
+            border:none;
+            outline:none;
+            background-color:  rgba(46, 33, 233, 0.7);
+        }
+  
+    </style>
+</head>
+
+<body >
+
+
+    <div id="demo">
+        <button id="sam" onclick="my('i')"><img src="right.png" height="20px" width="35px"></button>
+
+        <button id="sam2" onclick="my('d')"><img src="left.png" height="20px" width="35px"></button>
+    </div>
+    <p id="print" style="display: none;">1</p>
+
+    <script>
+        
+        function my(t) {
+
+            var p = document.getElementById("print");
+            var j= p.textContent;
+            if (t == "i") {
+                j++;
+            console.log(j);
+            } else {
+if(j==1)
+{
+    j=5;
+}
+                j--;
+            }
+
+            calculate(j);
+
+        }
+
+        function calculate(j) {
+
+            var demo = document.getElementById("demo");
+            var p = document.getElementById("print");
+            if (j > 4) {
+                j = 1;
+                p.innerHTML = j;
+            }
+            if (j == 1) {
+                demo.classList.add("first");
+                demo.classList.remove("second");
+                demo.classList.remove("third");
+                demo.classList.remove("four");
+            } else if (j == 2) {
+                demo.classList.add("second");
+                demo.classList.remove("first");
+                demo.classList.remove("third");
+                demo.classList.remove("four");
+            } else if (j == 3) {
+                demo.classList.add("third");
+                demo.classList.remove("second");
+                demo.classList.remove("first");
+                demo.classList.remove("four");
+            } else if (j == 4) {
+                demo.classList.add("four");
+                demo.classList.remove("second");
+                demo.classList.remove("third");
+                demo.classList.remove("first");
+            }
+            
+    
+            p.innerHTML = j;
+
+        }
+
+        // function calculat(j) {
+
+        //     if (j > 4) {
+        //         j = 1;
+        //         // p.innerHTML = j;
+        //     }
+        //     var demo = document.getElementById("demo");
+        //     var p = document.getElementById("print");
+        //     if (j == 1) {
+        //         demo.classList.add("first");
+        //         demo.classList.remove("second");
+        //         demo.classList.remove("third");
+        //         demo.classList.remove("four");
+        //     } else if (j == 2) {
+        //         demo.classList.add("second");
+        //         demo.classList.remove("first");
+        //         demo.classList.remove("third");
+        //         demo.classList.remove("four");
+        //     } else if (j == 3) {
+        //         demo.classList.add("third");
+        //         demo.classList.remove("second");
+        //         demo.classList.remove("first");
+        //         demo.classList.remove("four");
+        //     } else if (j == 4) {
+        //         demo.classList.add("four");
+        //         demo.classList.remove("second");
+        //         demo.classList.remove("third");
+        //         demo.classList.remove("first");
+
+        //     }
+
+
+        //     p.innerHTML = j;
+        //     //j = p.textContent;
+        //     j++;
+
+        //     setTimeout(function() {
+        //         calculat(j);
+        //     }, 3000);
+
+
+        // }
+    </script>
+</body>
+
+
+</html>
